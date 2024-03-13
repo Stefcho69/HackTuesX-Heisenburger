@@ -1,0 +1,29 @@
+# Unity generated files
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+[Uu]serData/
+[Ii]mport/
+[Uu]*.tmp/
+[Uu]WS_Log/
+
+# Rider
+.idea/
+
+# Visual Studio Code
+.vscode/
+
+# User-specific files
+*.suo
+*.user
+*.userprefs
+*.lock
+
+# Unity generated folders
+/Library/
+/Logs/
+/Temp/
+/UserSettings/
