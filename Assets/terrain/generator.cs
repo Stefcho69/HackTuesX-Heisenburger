@@ -23,7 +23,7 @@ public class generator : MonoBehaviour
         for (int i = 0; i < width; i++)
         {
             float y = Random.Range(1, height);
-            Instantiate(kvadrat, new Vector2(i, 0), Quaternion.identity);
+            Instantiate(kvadrat, new Vector2(i, -100), Quaternion.identity);
             for (float j = 1; j < y; j++)
             {
                 Instantiate(kvadrat, new Vector2(i, j), Quaternion.identity);
