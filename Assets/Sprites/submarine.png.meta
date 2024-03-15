@@ -1,9 +1,5 @@
 fileFormatVersion: 2
-<<<<<<<< HEAD:Assets/Sprites/submarine.png.meta
-guid: b7c1ac64d0bd1d343a35d1d89c108811
-========
-guid: 14b2b90049f86fe4e856115e5b32b095
->>>>>>>> origin:Assets/logo.png.meta
+guid: 042246920cf3ccc40be447610bb3fb20
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -38,7 +34,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
