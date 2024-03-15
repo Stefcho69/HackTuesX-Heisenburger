@@ -18,4 +18,12 @@ public class enemyMovement : MonoBehaviour
         transform.position = Vector2.MoveTowards(transform.position, Submarine.transform.position, speed * Time.deltaTime);
         transform.right = (Submarine.transform.position - transform.position) * -1;
     }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            Debug.Log("BOOM");
+        }
+    }
 }

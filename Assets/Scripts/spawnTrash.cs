@@ -10,31 +10,47 @@ public class spawnTrash : MonoBehaviour
     [SerializeField] GameObject Cupboard;
     [SerializeField] GameObject Cup;
     [SerializeField] float timer = 10;
-    public float x1 = -21.5f;
-    public float y1 = 16.0f;
-    public float x2 = 153.0f;
-    public float y2 = -16.1f;
     // Start is called before the first frame update
     void Start()
     {
-      
+        StartCoroutine(Trash_spawn());
     }
 
     // Update is called once per frame
     void Update()
     {
-        timer -= Time.deltaTime;
-        if(timer <= 0)
-        {
-            Vector2 pos = new Vector2(Random.Range(x1, y1), Random.Range(x2, y2));
-            Instantiate(Water, pos);
-            timer = 10;
-        }
-        
+
     }
 
-    private void Instantiate(GameObject water, Vector2 pos)
+    IEnumerator Trash_spawn()
     {
-        throw new System.NotImplementedException();
+        for (int i = 0; i < timer; i++)
+        {
+            yield return new WaitForSeconds(1);
+            float x1 = -21.5f;
+            float y1 = 16.0f;
+            float x2 = 153.0f;
+            float y2 = -16.1f;
+
+            switch (i % 5)
+            {
+                case 0:
+                    Instantiate(Water, new Vector2(Random.Range(x1, x2), Random.Range(y1, y2)), Quaternion.identity);
+                    break;
+                case 1:
+                    Instantiate(Pizza, new Vector2(Random.Range(x1, x2), Random.Range(y1, y2)), Quaternion.identity);
+                    break;
+                case 2:
+                    Instantiate(Milk, new Vector2(Random.Range(x1, x2), Random.Range(y1, y2)), Quaternion.identity);
+                    break;
+                case 3:
+                    Instantiate(Cupboard, new Vector2(Random.Range(x1, x2), Random.Range(y1, y2)), Quaternion.identity);
+                    break;
+                case 4:
+                    Instantiate(Cup, new Vector2(Random.Range(x1, x2), Random.Range(y1, y2)), Quaternion.identity);
+                    break;
+            }
+        }
     }
 }
+

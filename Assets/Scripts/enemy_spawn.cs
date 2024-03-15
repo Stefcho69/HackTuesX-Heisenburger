@@ -26,7 +26,7 @@ public class EnemySpawn : MonoBehaviour
         int choice = Random.Range(1, 2);
         for (int i=0; i<interval; i++)
         {
-            yield return new WaitForSeconds(1);
+            yield return new WaitForSeconds(5);
             float x = player.transform.position.x;
             float y = player.transform.position.y;
 
@@ -51,11 +51,11 @@ public class EnemySpawn : MonoBehaviour
             switch (choice)
             {
                 case 1:
-                    Instantiate(enemy_variant_1, new Vector2(Random.Range(x - 10, x + 10), Random.Range(y - 10, y + 10)), Quaternion.identity);
+                    Instantiate(enemy_variant_1, new Vector2(Random.Range(x - 20, x + 20), Random.Range(y - 20, y + 20)), Quaternion.identity);
                     choice = 2;
                     break;
                 case 2:
-                    Instantiate(enemy_variant_2, new Vector2(Random.Range(x - 10, x + 10), Random.Range(y - 10, y + 10)), Quaternion.identity);
+                    Instantiate(enemy_variant_2, new Vector2(Random.Range(x - 20, x + 20), Random.Range(y - 20, y + 20)), Quaternion.identity);
                     choice = 1;
                     break;
             }
