@@ -7,7 +7,6 @@ public class Player : MonoBehaviour
 
     public int maxHealth = 100;
     public int currentHealth;
-    public Collider2D collusion;
 
     public Healthbar healthbar;
     void Start()
@@ -17,7 +16,7 @@ public class Player : MonoBehaviour
     }
     void Update()
     {
-        if (collusion.CompareTag("Obstacle"))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             TakeDamage(20);
         }
