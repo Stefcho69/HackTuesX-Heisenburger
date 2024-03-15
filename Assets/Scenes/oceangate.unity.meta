@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Scenes/oceangate.unity.meta
 guid: e58dbe5057cbada449c46b08a5ee2ecc
+========
+guid: f9a59f7b076870e42b5f9216bbc28a33
+>>>>>>>> origin:Assets/Scenes/Menu.unity.meta
 DefaultImporter:
   externalObjects: {}
   userData: 

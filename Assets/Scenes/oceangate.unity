@@ -244,7 +244,7 @@ GameObject:
   - component: {fileID: 1239670785}
   - component: {fileID: 1239670789}
   m_Layer: 0
-  m_Name: Square
+  m_Name: Submarine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
