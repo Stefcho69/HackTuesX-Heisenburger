@@ -1,26 +1,20 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEditor.Tilemaps;
 using UnityEngine;
-using UnityEngine.UIElements;
 
 public class Movement : MonoBehaviour
 {
     private bool isFacingRight = true;
     public float speed = 1f;
     
-    // Start is called before the first frame update
     void Start()
     {
         transform.position = new Vector3(0, 0, 0);
         
     }
 
-    // Update is called once per frame
     void Update()
     {
       
-       float horizontalInput = Input.GetAxis("Horizontal");
+        float horizontalInput = Input.GetAxis("Horizontal");
         float verticalInput = Input.GetAxis("Vertical");
         transform.Translate(Vector3.right * speed * horizontalInput * Time.deltaTime);
         transform.Translate(Vector3.up * verticalInput *speed * Time.deltaTime);
@@ -28,7 +22,6 @@ public class Movement : MonoBehaviour
         Flip();
     }
    
-
     private void Flip()
     {       
         float horizontalInput = Input.GetAxis("Horizontal");
@@ -42,14 +35,5 @@ public class Movement : MonoBehaviour
             transform.localScale = localScale;
         }
     }
-
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.gameObject.CompareTag("Enemy"))
-        {
-            Debug.Log("BOOM");
-        }
-    }
-
 }
 
