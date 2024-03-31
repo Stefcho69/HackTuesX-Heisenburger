@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class spawnTrash : MonoBehaviour
@@ -9,10 +10,16 @@ public class spawnTrash : MonoBehaviour
     [SerializeField] GameObject Cupboard;
     [SerializeField] GameObject Cup;
     [SerializeField] float timer = 10;
-
+    // Start is called before the first frame update
     void Start()
     {
         StartCoroutine(Trash_spawn());
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+
     }
 
     IEnumerator Trash_spawn()
@@ -20,7 +27,7 @@ public class spawnTrash : MonoBehaviour
         for (int i = 0; i < timer; i++)
         {
             yield return new WaitForSeconds(1);
-            float x1 = -21.5f;
+            float x1 = -18.5f;
             float y1 = 16.0f;
             float x2 = 153.0f;
             float y2 = -16.1f;

@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Suicede_script : MonoBehaviour
@@ -11,6 +12,14 @@ public class Suicede_script : MonoBehaviour
         StartCoroutine(DeleteFunc(interval));
         StopCoroutine(DeleteFunc(interval));
     }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
+
+
 
     IEnumerator DeleteFunc(int interval)
     {

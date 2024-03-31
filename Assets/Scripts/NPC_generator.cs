@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class NPC_generator : MonoBehaviour
@@ -11,9 +12,16 @@ public class NPC_generator : MonoBehaviour
     [SerializeField] GameObject player;
     [SerializeField] int interval;
     [SerializeField] int count;
+    // Start is called before the first frame update
     void Start()
     {
         StartCoroutine(NPC_spawn());
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
     }
 
     IEnumerator NPC_spawn()

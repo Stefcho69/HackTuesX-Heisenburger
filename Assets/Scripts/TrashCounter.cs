@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 public class TrashCounter : MonoBehaviour
@@ -13,6 +15,12 @@ public class TrashCounter : MonoBehaviour
     void Start()
     {
         trashtext.text = "Trash: " + currenttrash.ToString();
+
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
 
     }
 

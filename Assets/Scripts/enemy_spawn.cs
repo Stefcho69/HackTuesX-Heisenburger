@@ -1,4 +1,7 @@
 using System.Collections;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class EnemySpawn : MonoBehaviour
@@ -12,6 +15,10 @@ public class EnemySpawn : MonoBehaviour
     void Start()
     {
         StartCoroutine(Spawn_Enemy());
+    }
+
+    void Update()
+    {
     }
 
     IEnumerator Spawn_Enemy()
