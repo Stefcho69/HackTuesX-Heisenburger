@@ -27,7 +27,7 @@ public class spawnTrash : MonoBehaviour
         for (int i = 0; i < timer; i++)
         {
             yield return new WaitForSeconds(1);
-            float x1 = -21.5f;
+            float x1 = -18.5f;
             float y1 = 16.0f;
             float x2 = 153.0f;
             float y2 = -16.1f;
