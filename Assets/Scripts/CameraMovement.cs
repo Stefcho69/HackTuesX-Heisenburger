@@ -18,7 +18,6 @@ public class CameraMovement : MonoBehaviour
         }
         else
         {
-            Debug.Log("AAA");
             transform.position = target.position + offset;
         }
         

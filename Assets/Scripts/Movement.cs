@@ -56,14 +56,6 @@ public class Movement : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.gameObject.CompareTag("Enemy"))
-        {
-            Debug.Log("BOOM");
-        }
-    }
-
     private void switchToPlayer()
     {
         if (Input.GetKeyUp(KeyCode.E))
