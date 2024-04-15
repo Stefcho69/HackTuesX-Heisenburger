@@ -22,6 +22,7 @@ public class Trash : MonoBehaviour
         {
             Destroy(gameObject);
             TrashCounter.instance.IncreaseTrash(value);
+   
         }
     }
 }

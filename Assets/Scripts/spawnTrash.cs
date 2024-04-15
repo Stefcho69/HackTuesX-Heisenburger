@@ -32,7 +32,9 @@ public class spawnTrash : MonoBehaviour
             float x2 = 153.0f;
             float y2 = -16.1f;
 
-            switch (i % 5)
+            if(Water != null && Pizza != null && Milk != null && Cupboard != null && Cup != null)
+            {
+ switch (i % 5)
             {
                 case 0:
                     Instantiate(Water, new Vector2(Random.Range(x1, x2), Random.Range(y1, y2)), Quaternion.identity);
@@ -50,6 +52,8 @@ public class spawnTrash : MonoBehaviour
                     Instantiate(Cup, new Vector2(Random.Range(x1, x2), Random.Range(y1, y2)), Quaternion.identity);
                     break;
             }
+            }
+           
         }
     }
 }
