@@ -15,7 +15,7 @@ public class TrashCounter : MonoBehaviour
     void Start()
     {
         trashtext.text = "Trash: " + currenttrash.ToString();
-
+        
     }
 
     // Update is called once per frame
@@ -29,4 +29,6 @@ public class TrashCounter : MonoBehaviour
         currenttrash += v;
         trashtext.text = "Trash: " + currenttrash.ToString();
     }
+
+    
 }

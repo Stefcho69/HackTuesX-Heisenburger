@@ -8,6 +8,7 @@ public class Airbar : MonoBehaviour
     public Transform Submarine;
     public GameObject Player;
     public Image Bar;
+    public Image Border;
     public float air = 100f;
     // Start is called before the first frame update
     void Start()
@@ -21,18 +22,23 @@ public class Airbar : MonoBehaviour
         Bar.fillAmount = air / 100f;
         if (!Player.activeInHierarchy && Submarine.position.y < 16.4)
         {
-            air -= Time.deltaTime;
+            air -= Time.deltaTime * 3;
             
         }
 
         if(Submarine.position.y >= 16.4)
         {
-            air += Time.deltaTime * 2;
+            air += Time.deltaTime * 5;
         }
 
-        if (air < 0)
+        if (air < 18f)
         {
-            Debug.Log("Breathe Air!");
+            Border.color = Color.red;
+            
+        }
+        else
+        {
+            Border.color = Color.black;
         }
 
         if(air > 100f)

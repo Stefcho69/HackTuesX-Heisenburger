@@ -6,9 +6,13 @@ using UnityEngine.UIElements;
 
 public class Movement : MonoBehaviour
 {
+    public static Movement instance;
+    [SerializeField] private Sprite submarine;
     [SerializeField] private GameObject Player;
+    [SerializeField] private GameObject Pause;
     private bool isFacingRight = true;
     private bool isInside = false;
+    private bool isPaused = false;
     public float speed = 1f;
     
     void Start()
@@ -39,6 +43,7 @@ public class Movement : MonoBehaviour
         }
         
         switchToPlayer();
+        pause();
     }
    
 
@@ -76,6 +81,23 @@ public class Movement : MonoBehaviour
             {
                 isInside = true;
                 Player.SetActive(false);
+            }
+        }
+    }
+
+    private void pause()
+    {
+        if (Input.GetKeyUp(KeyCode.Escape))
+        {
+            if (isPaused)
+            {
+                isPaused = false;
+                Pause.SetActive(true);
+            }
+            else
+            {
+                isPaused = true;
+                Pause.SetActive(false);
             }
         }
     }
