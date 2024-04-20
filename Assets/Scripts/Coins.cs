@@ -21,6 +21,9 @@ public class coinsCounter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if(currentcoins < 0)
+        {
+            currentcoins = 0;
+        }
     }
 }

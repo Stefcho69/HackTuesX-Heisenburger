@@ -7,9 +7,11 @@ using UnityEngine.UIElements;
 public class Movement : MonoBehaviour
 {
     public static Movement instance;
-    [SerializeField] private Sprite submarine;
+    public Sprite newSprite;
+    public Sprite newSprite2;
     [SerializeField] private GameObject Player;
     [SerializeField] private GameObject Pause;
+    public GameObject trigger;
     private bool isFacingRight = true;
     private bool isInside = false;
     private bool isPaused = false;
@@ -17,12 +19,13 @@ public class Movement : MonoBehaviour
     
     void Start()
     {
+        instance = this;
         transform.position = new Vector3(-21.06f, 16.64f, 0);
     }
 
     void Update()
     {
-        if (isInside)
+        if (isInside && !isPaused)
         {
             float horizontalInput = Input.GetAxis("Horizontal");
             float verticalInput = Input.GetAxis("Vertical");
@@ -39,6 +42,11 @@ public class Movement : MonoBehaviour
             if (transform.position.x <= -21.43 && transform.position.y <= 16)
             {
                 transform.position = new Vector3(-21.43f, transform.position.y, 0);
+            }
+
+            if (transform.position.y <= -16.14)
+            {
+                transform.position = new Vector3(transform.position.x, -16.14f, 0);
             }
         }
         
@@ -71,33 +79,40 @@ public class Movement : MonoBehaviour
 
     private void switchToPlayer()
     {
-        if (Input.GetKeyUp(KeyCode.E))
+        if(trigger.activeInHierarchy)
         {
-            if (isInside)
+            if (Input.GetKeyUp(KeyCode.E))
             {
-                isInside = false;
-                Player.SetActive(true);
-            }else
-            {
-                isInside = true;
-                Player.SetActive(false);
+                if (isInside)
+                {
+                    isInside = false;
+                    Player.SetActive(true);
+                }
+                else
+                {
+                    isInside = true;
+                    Player.SetActive(false);
+                }
             }
         }
+        
     }
 
     private void pause()
     {
         if (Input.GetKeyUp(KeyCode.Escape))
         {
-            if (isPaused)
+            if (!isPaused)
             {
-                isPaused = false;
                 Pause.SetActive(true);
+                isPaused = true;
+                
             }
             else
             {
-                isPaused = true;
                 Pause.SetActive(false);
+                isPaused = false;
+               
             }
         }
     }

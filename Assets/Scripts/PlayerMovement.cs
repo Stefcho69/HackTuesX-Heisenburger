@@ -17,14 +17,21 @@ public class PlayerMovement : MonoBehaviour
         float verticalInput = Input.GetAxis("Vertical");
         if (canMove)
         {
-         transform.Translate(Vector3.right * speed * horizontalInput * Time.deltaTime);
+            transform.Translate(Vector3.right * speed * horizontalInput * Time.deltaTime);
         }
       
 
-        if (Input.GetKeyDown(KeyCode.Space) && canMove)
+        if (Input.GetKeyDown(KeyCode.Space) && canMove && transform.position.y < 17.20f)
         {
             Debug.Log("JUMP");
             rb.AddForce(new Vector2(rb.velocity.x, 150));
         }
+
+        if(transform.position.x < -62.56f)
+        {
+            transform.position = new Vector3(-62.56f, transform.position.y, transform.position.z);
+        }
+
+
     }
 }

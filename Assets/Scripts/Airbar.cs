@@ -5,15 +5,17 @@ using UnityEngine.UI;
 
 public class Airbar : MonoBehaviour
 {
+    public static Airbar instance;
     public Transform Submarine;
     public GameObject Player;
     public Image Bar;
     public Image Border;
     public float air = 100f;
+    public float airCap = 3;
     // Start is called before the first frame update
     void Start()
     {
-        
+        instance = this;
     }
 
     // Update is called once per frame
@@ -22,7 +24,7 @@ public class Airbar : MonoBehaviour
         Bar.fillAmount = air / 100f;
         if (!Player.activeInHierarchy && Submarine.position.y < 16.4)
         {
-            air -= Time.deltaTime * 3;
+            air -= Time.deltaTime * airCap;
             
         }
 
