@@ -79,23 +79,19 @@ public class Movement : MonoBehaviour
 
     private void switchToPlayer()
     {
-        if(trigger.activeInHierarchy)
+        if (Input.GetKeyUp(KeyCode.E))
         {
-            if (Input.GetKeyUp(KeyCode.E))
+            if (isInside)
             {
-                if (isInside)
-                {
-                    isInside = false;
-                    Player.SetActive(true);
-                }
-                else
-                {
-                    isInside = true;
-                    Player.SetActive(false);
-                }
+                isInside = false;
+                Player.SetActive(true);
+            }
+            else
+            {
+                isInside = true;
+                Player.SetActive(false);
             }
         }
-        
     }
 
     private void pause()
